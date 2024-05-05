@@ -1,0 +1,14 @@
+.Home {
+	direction: rtl;
+
+	height: 85dvh;
+	padding-inline: var(--bigInlinePadding);
+
+	@media (max-width: 767px) {
+		padding: var(--smallInlinePadding);
+	}
+
+	.HomeHeading {
+		margin-block: 1rem;
+	}
+}

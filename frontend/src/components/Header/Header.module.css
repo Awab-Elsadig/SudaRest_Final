@@ -1,0 +1,41 @@
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	min-height: 10dvh;
+
+	background-color: #333;
+	color: #fff;
+
+	padding-inline: var(--bigInlinePadding);
+
+	@media (max-width: 767px) {
+		padding: var(--smallInlinePadding);
+	}
+
+	h1 {
+		@media (max-width: 767px) {
+			font-size: 1rem;
+		}
+	}
+
+	.nav {
+		ul {
+			display: flex;
+			li {
+				margin-left: 2rem;
+			}
+		}
+
+		@media (max-width: 767px) {
+			display: none;
+		}
+	}
+	.burger-menu {
+		display: none;
+		@media (max-width: 767px) {
+			display: flex;
+			font-size: 1rem;
+		}
+	}
+}

@@ -1,0 +1,8 @@
+footer {
+	display: grid;
+	place-items: center;
+	background-color: #454545;
+	color: white;
+
+	min-height: 5dvh;
+}

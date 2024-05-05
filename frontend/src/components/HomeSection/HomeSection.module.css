@@ -1,0 +1,45 @@
+.HomeSection {
+	display: flex;
+	height: 10rem;
+	margin-block: 2rem;
+
+	background-color: #a3a3a3;
+	color: #fff;
+
+	border-radius: 0.8rem;
+	border: 0.2rem solid #000;
+	overflow: hidden;
+
+	cursor: pointer;
+	transition: scale 0.2s;
+
+	&:nth-of-type(2) {
+		img {
+			scale: 1.3;
+		}
+	}
+
+	&:active {
+		scale: 0.98;
+	}
+
+	.leftContent {
+		display: flex;
+		align-items: center;
+		flex-grow: 1;
+		padding: 1rem;
+		font-size: 1.5rem;
+		text-shadow: 0.2rem 0.2rem 0 #000;
+	}
+
+	.rightImage {
+		border-left: 0.2rem solid #000;
+		overflow: hidden;
+		img {
+			height: 100%;
+			width: 10rem;
+			object-position: center;
+			object-fit: cover;
+		}
+	}
+}
