@@ -5,6 +5,7 @@ import express from "express";
 import cors from "cors";
 import foodRouter from "./routers/food.router.js";
 import userRouter from "./routers/user.router.js";
+import restaurantRouter from "./routers/restaurant.router.js";
 
 import { dbconnect } from "./config/database.config.js";
 dbconnect();
@@ -22,6 +23,7 @@ app.use(
 
 app.use("/api/foods", foodRouter);
 app.use("/api/users", userRouter);
+app.use("/api/restaurants", restaurantRouter);
 
 const PORT = 5678;
 

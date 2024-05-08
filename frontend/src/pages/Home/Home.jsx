@@ -1,13 +1,28 @@
 import React, { useEffect, useState } from "react";
 import HomeSection from "../../components/HomeSection/HomeSection";
 import classes from "./Home.module.css";
+import axios from "axios";
 
 export default function Home() {
 	const [activeSection, setActiveSection] = useState();
+	const [restaurants, setRestaurants] = useState([]);
+	const [isLoading, setIsLoading] = useState(false);
 
-	const handleClick = (section) => {
+	const handleClick = async (section) => {
 		console.log(`Clicked: ${section}`);
 		setActiveSection(section);
+
+		if (section == "restaurants") {
+			setIsLoading(true);
+			await axios
+				.get("/api/restaurants")
+				.then((result) => setRestaurants(result.data))
+				.finally(() =>
+					setTimeout(() => {
+						setIsLoading(false);
+					}, 1000)
+				);
+		}
 	};
 
 	useEffect(() => {
@@ -34,7 +49,18 @@ export default function Home() {
 				onClick={() => handleClick("products")}
 			/>
 			{activeSection === "restaurants" && (
-				<div>Content for Restaurants Section</div>
+				<div>
+					{isLoading ? (
+						<p>Loading Restaurants...</p>
+					) : (
+						restaurants.map((res) => (
+							<div key={res._id}>
+								{console.log(res)}
+								{res.name}
+							</div>
+						))
+					)}
+				</div>
 			)}
 			{activeSection === "products" && <div>Content for Products Section</div>}
 		</div>

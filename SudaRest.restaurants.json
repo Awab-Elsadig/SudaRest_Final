@@ -1,0 +1,372 @@
+[{
+  "_id": {
+    "$oid": "663ad9dd9b59005da5012265"
+  },
+  "name": "Pizza Palace",
+  "fakeImageUrl": "https://placeimg.com/640/480/pizza",
+  "totalOrders": 1234,
+  "menu": [
+    {
+      "name": "Margherita Pizza",
+      "imageUrl": "https://placeimg.com/320/240/pizza",
+      "price": 12.99,
+      "rating": 4.5,
+      "orders": 876
+    },
+    {
+      "name": "Pepperoni Pizza",
+      "imageUrl": "https://placeimg.com/320/240/pizza",
+      "price": 14.5,
+      "rating": 4.8,
+      "orders": 1021
+    },
+    {
+      "name": "Hawaiian Pizza",
+      "imageUrl": "https://placeimg.com/320/240/pizza",
+      "price": 13.75,
+      "rating": 4.2,
+      "orders": 542
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663ad9dd9b59005da5012266"
+  },
+  "name": "Burger Barn",
+  "fakeImageUrl": "https://placeimg.com/640/480/burger",
+  "totalOrders": 2543,
+  "menu": [
+    {
+      "name": "Classic Cheeseburger",
+      "imageUrl": "https://placeimg.com/320/240/burger",
+      "price": 8.99,
+      "rating": 4.3,
+      "orders": 1452
+    },
+    {
+      "name": "Bacon Cheeseburger",
+      "imageUrl": "https://placeimg.com/320/240/burger",
+      "price": 10.5,
+      "rating": 4.7,
+      "orders": 1823
+    },
+    {
+      "name": "Mushroom Swiss Burger",
+      "imageUrl": "https://placeimg.com/320/240/burger",
+      "price": 9.75,
+      "rating": 4.1,
+      "orders": 784
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663ad9dd9b59005da5012267"
+  },
+  "name": "Taco Fiesta",
+  "fakeImageUrl": "https://placeimg.com/640/480/mexican",
+  "totalOrders": 1872,
+  "menu": [
+    {
+      "name": "Al Pastor Tacos",
+      "imageUrl": "https://placeimg.com/320/240/mexican",
+      "price": 7.99,
+      "rating": 4.6,
+      "orders": 1234
+    },
+    {
+      "name": "Carnitas Tacos",
+      "imageUrl": "https://placeimg.com/320/240/mexican",
+      "price": 8.5,
+      "rating": 4.4,
+      "orders": 987
+    },
+    {
+      "name": "Chicken Tinga Tacos",
+      "imageUrl": "https://placeimg.com/320/240/mexican",
+      "price": 7.75,
+      "rating": 4.2,
+      "orders": 643
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663ad9dd9b59005da5012268"
+  },
+  "name": "Noodle Nirvana",
+  "fakeImageUrl": "https://placeimg.com/640/480/asian",
+  "totalOrders": 3124,
+  "menu": [
+    {
+      "name": "Pad Thai",
+      "imageUrl": "https://placeimg.com/320/240/asian",
+      "price": 11.99,
+      "rating": 4.8,
+      "orders": 1782
+    },
+    {
+      "name": "Chicken Lo Mein",
+      "imageUrl": "https://placeimg.com/320/240/asian",
+      "price": 10.5,
+      "rating": 4.5,
+      "orders": 1043
+    },
+    {
+      "name": "Vegetable Ramen",
+      "imageUrl": "https://placeimg.com/320/240/asian",
+      "price": 9.75,
+      "rating": 4.7,
+      "orders": 824
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663ad9dd9b59005da5012269"
+  },
+  "name": "Crepe Corner",
+  "fakeImageUrl": "https://placeimg.com/640/480/dessert",
+  "totalOrders": 987,
+  "menu": [
+    {
+      "name": "Nutella Crepe",
+      "imageUrl": "https://placeimg.com/320/240/dessert",
+      "price": 6.99,
+      "rating": 4.9,
+      "orders": 542
+    },
+    {
+      "name": "Strawberry Crepe",
+      "imageUrl": "https://placeimg.com/320/240/dessert",
+      "price": 7.5,
+      "rating": 4.8,
+      "orders": 389
+    },
+    {
+      "name": "Ham and Cheese Crepe",
+      "imageUrl": "https://placeimg.com/320/240/dessert",
+      "price": 8.75,
+      "rating": 4.3,
+      "orders": 256
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663ad9dd9b59005da501226a"
+  },
+  "name": "Poke Paradise",
+  "fakeImageUrl": "https://placeimg.com/640/480/hawaiian",
+  "totalOrders": 1543,
+  "menu": [
+    {
+      "name": "Salmon Poke Bowl",
+      "imageUrl": "https://placeimg.com/320/240/hawaiian",
+      "price": 14.99,
+      "rating": 4.7,
+      "orders": 821
+    },
+    {
+      "name": "Tuna Poke Bowl",
+      "imageUrl": "https://placeimg.com/320/240/hawaiian",
+      "price": 13.5,
+      "rating": 4.5,
+      "orders": 543
+    },
+    {
+      "name": "Veggie Poke Bowl",
+      "imageUrl": "https://placeimg.com/320/240/hawaiian",
+      "price": 12.75,
+      "rating": 4.2,
+      "orders": 479
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663ad9dd9b59005da501226b"
+  },
+  "name": "Souvlaki Specialists",
+  "fakeImageUrl": "https://placeimg.com/640/480/greek",
+  "totalOrders": 2872,
+  "menu": [
+    {
+      "name": "Chicken Souvlaki",
+      "imageUrl": "https://placeimg.com/320/240/greek",
+      "price": 10.99,
+      "rating": 4.9,
+      "orders": 1642
+    },
+    {
+      "name": "Pork Souvlaki",
+      "imageUrl": "https://placeimg.com/320/240/greek",
+      "price": 11.5,
+      "rating": 4.8,
+      "orders": 1023
+    },
+    {
+      "name": "Lamb Souvlaki",
+      "imageUrl": "https://placeimg.com/320/240/greek",
+      "price": 12.75,
+      "rating": 4.7,
+      "orders": 804
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663ad9dd9b59005da501226c"
+  },
+  "name": "Falafel Frenzy",
+  "fakeImageUrl": "https://placeimg.com/640/480/mediterranean",
+  "totalOrders": 1234,
+  "menu": [
+    {
+      "name": "Falafel Wrap",
+      "imageUrl": "https://placeimg.com/320/240/mediterranean",
+      "price": 8.99,
+      "rating": 4.6,
+      "orders": 723
+    },
+    {
+      "name": "Falafel Plate",
+      "imageUrl": "https://placeimg.com/320/240/mediterranean",
+      "price": 10.5,
+      "rating": 4.4,
+      "orders": 432
+    },
+    {
+      "name": "Falafel Bowl",
+      "imageUrl": "https://placeimg.com/320/240/mediterranean",
+      "price": 9.75,
+      "rating": 4.7,
+      "orders": 432
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663ad9dd9b59005da501226d"
+  },
+  "name": "Falafel Frenzy",
+  "fakeImageUrl": "https://placeimg.com/640/480/mediterranean",
+  "totalOrders": 1234,
+  "menu": [
+    {
+      "name": "Falafel Wrap",
+      "imageUrl": "https://placeimg.com/320/240/mediterranean",
+      "price": 8.99,
+      "rating": 4.6,
+      "orders": 723
+    },
+    {
+      "name": "Falafel Plate",
+      "imageUrl": "https://placeimg.com/320/240/mediterranean",
+      "price": 10.5,
+      "rating": 4.4,
+      "orders": 432
+    },
+    {
+      "name": "Falafel Bowl",
+      "imageUrl": "https://placeimg.com/320/240/mediterranean",
+      "price": 9.75,
+      "rating": 4.7,
+      "orders": 79
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663ad9dd9b59005da501226e"
+  },
+  "name": "Curry Up!",
+  "fakeImageUrl": "https://placeimg.com/640/480/indian",
+  "totalOrders": 2348,
+  "menu": [
+    {
+      "name": "Butter Chicken",
+      "imageUrl": "https://placeimg.com/320/240/indian",
+      "price": 13.99,
+      "rating": 4.8,
+      "orders": 1243
+    },
+    {
+      "name": "Saag Paneer",
+      "imageUrl": "https://placeimg.com/320/240/indian",
+      "price": 12.5,
+      "rating": 4.7,
+      "orders": 872
+    },
+    {
+      "name": "Chicken Tikka Masala",
+      "imageUrl": "https://placeimg.com/320/240/indian",
+      "price": 14.75,
+      "rating": 4.9,
+      "orders": 948
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663ad9dd9b59005da501226f"
+  },
+  "name": "The Rolling Pin",
+  "fakeImageUrl": "https://placeimg.com/640/480/bakery",
+  "totalOrders": 789,
+  "menu": [
+    {
+      "name": "Chocolate Chip Cookies",
+      "imageUrl": "https://placeimg.com/320/240/bakery",
+      "price": 2.99,
+      "rating": 4.9,
+      "orders": 423
+    },
+    {
+      "name": "Carrot Cake",
+      "imageUrl": "https://placeimg.com/320/240/bakery",
+      "price": 18.5,
+      "rating": 4.8,
+      "orders": 234
+    },
+    {
+      "name": "Sourdough Bread",
+      "imageUrl": "https://placeimg.com/320/240/bakery",
+      "price": 5.75,
+      "rating": 4.7,
+      "orders": 132
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663b04ce4c155d42ffb78c94"
+  },
+  "name": "Bsbsooh",
+  "fakeImageUrl": "https://placeimg.com/640/480/bsbosah",
+  "totalOrders": 325464,
+  "menu": [
+    {
+      "name": "Small",
+      "imageUrl": "https://placeimg.com/320/240/small",
+      "price": 8.99,
+      "rating": 4.3,
+      "orders": 1452
+    },
+    {
+      "name": "Medium",
+      "imageUrl": "https://placeimg.com/320/240/medium",
+      "price": 10.5,
+      "rating": 4.7,
+      "orders": 1823
+    },
+    {
+      "name": "Large",
+      "imageUrl": "https://placeimg.com/320/240/large",
+      "price": 9.75,
+      "rating": 4.1,
+      "orders": 784
+    }
+  ]
+}]
