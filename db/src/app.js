@@ -2,6 +2,7 @@ import express from "express";
 import RestaurantRouter from "./routes/restaurant.router.js";
 
 const app = express();
+app.use(express.json());
 const PORT = 5000;
 
 // Routes
