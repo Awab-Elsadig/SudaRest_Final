@@ -1,8 +1,9 @@
 header {
+	position: relative;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	min-height: 10dvh;
+	min-height: 10vh;
 
 	background-color: #333;
 	color: #fff;
@@ -15,27 +16,72 @@ header {
 
 	h1 {
 		@media (max-width: 767px) {
-			font-size: 1rem;
+			font-size: 1.7rem;
 		}
 	}
 
 	.nav {
+		display: flex;
+		gap: 3rem;
+
 		ul {
 			display: flex;
-			li {
-				margin-left: 2rem;
-			}
+			gap: 3rem;
+		}
+		.login {
+			color: blue;
+			cursor: pointer;
+		}
+		.logout {
+			color: red;
+			cursor: pointer;
 		}
 
 		@media (max-width: 767px) {
 			display: none;
+			position: absolute;
+			right: 0;
+			top: 99%;
+			padding: 0.5rem;
+			width: 100%;
+
+			background-color: #343434;
+			z-index: 2;
+
+			&.open {
+				display: flex;
+
+				ul {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					width: 100%;
+					gap: 0;
+
+					& > * {
+						border-bottom: 1px solid #f0f0f0;
+						width: 100%;
+						padding: 1rem;
+						text-align: center;
+					}
+				}
+			}
 		}
 	}
+
 	.burger-menu {
 		display: none;
+		font-size: 1rem;
+
+		.burger {
+			font-size: 2rem;
+		}
+
 		@media (max-width: 767px) {
 			display: flex;
-			font-size: 1rem;
 		}
+	}
+	.open {
+		display: flex;
 	}
 }

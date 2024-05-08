@@ -1,21 +1,28 @@
 import { connect, set } from "mongoose";
 import { UserModel } from "../models/user.model.js";
-import { ToDoModel } from "../models/todo.model.js";
+import { FoodModel } from "../models/food.model.js";
 import bcrypt from "bcryptjs";
 
 const users = [
 	{
 		name: "Awab",
 		email: "elsadigawab@gmail.com",
+		address: "Sidi Gabeer",
 		password: "325464",
 		isAdmin: true,
 	},
 ];
 
-const tasks = [
+const food = [
 	{
-		task: "Do the dishes",
-		done: false,
+		name: "Pizza",
+		price: 22,
+		tags: ["Yes", "Great"],
+		favorite: true,
+		stars: 4,
+		imageUrl: "#",
+		origins: ["Italy"],
+		cookTime: 25,
 	},
 ];
 
@@ -28,7 +35,7 @@ export const dbconnect = async () => {
 		connect(process.env.MONGO_URI);
 		console.log("Connect Succesfully");
 		await seedUsers();
-		await seedTasks();
+		await seedFood();
 	} catch (err) {
 		console.log(err);
 	}
@@ -48,15 +55,15 @@ async function seedUsers() {
 	console.log("Users seed is done!");
 }
 
-async function seedTasks() {
-	const taskCount = await ToDoModel.countDocuments();
-	if (taskCount > 0) {
-		console.log("Task seed is already done!");
+async function seedFood() {
+	const foodCount = await FoodModel.countDocuments();
+	if (foodCount > 0) {
+		console.log("Food seed is already done!");
 		return;
 	}
 
-	for (let task of tasks) {
-		await ToDoModel.create(task);
+	for (let item of food) {
+		await FoodModel.create(item);
 	}
-	console.log("Tasks seed is done!");
+	console.log("Foods seed is done!");
 }
