@@ -1,23 +1,22 @@
-import React, { useEffect, useState } from 'react'
-import HomeSection from '../../components/HomeSection/HomeSection'
-import classes from './Home.module.css'
-import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import HomeSection from '../../components/HomeSection/HomeSection';
+import classes from './Home.module.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
-	const [activeSection, setActiveSection] = useState()
-	const navigate = useNavigate()
+	const [activeSection, setActiveSection] = useState();
+	const navigate = useNavigate();
 
 	const handleClick = async (section) => {
-		navigate('/restaurants')
+		navigate('/restaurants');
 
-		console.log(`Clicked: ${section}`)
-		setActiveSection(section)
-	}
+		console.log(`Clicked: ${section}`);
+		setActiveSection(section);
+	};
 
 	useEffect(() => {
-		console.log('Active Section: ' + activeSection)
-	}, [activeSection])
+		console.log('Active Section: ' + activeSection);
+	}, [activeSection]);
 
 	return (
 		<div className={classes.Home}>
@@ -40,5 +39,5 @@ export default function Home() {
 			/>
 			{activeSection === 'products' && <div>Content for Products Section</div>}
 		</div>
-	)
+	);
 }

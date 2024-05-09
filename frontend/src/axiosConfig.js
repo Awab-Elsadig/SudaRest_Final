@@ -1,4 +1,6 @@
-import axios from "axios";
+import axios from 'axios';
 
 axios.defaults.baseURL =
-	process.env.NODE_ENV !== "production" ? "http://localhost:5678" : "/";
+	process.env.NODE_ENV !== 'production'
+		? 'https://sudarest-final.onrender.com'
+		: '/';
