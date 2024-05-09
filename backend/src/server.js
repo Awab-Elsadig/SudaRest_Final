@@ -14,12 +14,12 @@ const app = express();
 
 app.use(express.json());
 
-// app.use(
-// 	cors({
-// 		credentials: true,
-// 		origin: ["http://localhost:1234"],
-// 	})
-// );
+app.use(
+	cors({
+		credentials: true,
+		origin: ['http://localhost:1234'],
+	})
+);
 
 app.use('/api/foods', foodRouter);
 app.use('/api/users', userRouter);
