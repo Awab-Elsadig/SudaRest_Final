@@ -24,7 +24,7 @@ export default function Restaurants() {
 
 	return (
 		<div className={classes.container}>
-			<h2>المطاعم</h2>
+			<h2>أطلب من أشهى المطاعم الآن !!</h2>
 			<div className={classes.restaurantsContainer}>
 				{isLoading ? (
 					<p>Loading Restaurants...</p>
