@@ -14,12 +14,13 @@ const app = express();
 
 app.use(express.json());
 
-// app.use(
-// 	cors({
-// 		credentials: true,
-// 		origin: ['*'],
-// 	})
-// );
+app.use(
+	cors({
+		credentials: true,
+		origin: ['*'],
+		methods: ['GET', 'POST', 'DELETE', 'PATCH'],
+	})
+);
 
 app.use('/api/foods', foodRouter);
 app.use('/api/users', userRouter);
