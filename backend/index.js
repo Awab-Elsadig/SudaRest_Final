@@ -29,9 +29,9 @@ app.use('/test', (req, res) => {
 	res.send({ msg: 'Hello Awab the app is working I guess !!' });
 });
 
-app.use('/', (req, res) => {
-	res.send({ msg: 'Hello Awab the app is working !!' });
-});
+// app.use('/', (req, res) => {
+// 	res.send({ msg: 'Hello Awab the app is working !!' });
+// });
 
 const PORT = 5678 || process.env.PORT;
 
