@@ -21,6 +21,7 @@ app.use(
 	})
 );
 
+app.use('/', foodRouter);
 app.use('/api/foods', foodRouter);
 app.use('/api/users', userRouter);
 app.use('/api/restaurants', restaurantRouter);
