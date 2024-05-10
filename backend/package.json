@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "src/server.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/server.js",
-    "start": "node src/server.js",
+    "dev": "nodemon index.js",
+    "start": "node index.js",
     "build": "npm i"
+  },
+  "engines": {
+    "node": "20.12.2"
   },
   "keywords": [],
   "author": "",

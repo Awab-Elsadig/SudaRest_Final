@@ -25,7 +25,7 @@ app.use('/api/foods', foodRouter);
 app.use('/api/users', userRouter);
 app.use('/api/restaurants', restaurantRouter);
 
-const PORT = 5678;
+const PORT = 5678 || process.env.PORT;
 
 app.listen(PORT, () =>
 	console.log('Listening on port http://localhost:' + PORT)
