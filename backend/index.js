@@ -24,6 +24,11 @@ app.use(
 app.use('/', (req, res) => {
 	res.send({ msg: 'Hello Awab the app is working !!' });
 });
+
+app.use('/test', (req, res) => {
+	res.send({ msg: 'Hello Awab the app is working I guess !!' });
+});
+
 app.use('/api/foods', foodRouter);
 app.use('/api/users', userRouter);
 app.use('/api/restaurants', restaurantRouter);
