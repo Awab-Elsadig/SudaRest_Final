@@ -8,8 +8,8 @@ import userRouter from './src/routers/user.router.js';
 import restaurantRouter from './src/routers/restaurant.router.js';
 import { connectToDb } from './src/config/db.config.js';
 
-// import { dbconnect } from './src/config/database.config.js';
-// dbconnect();
+import { dbconnect } from './src/config/database.config.js';
+dbconnect();
 
 const app = express();
 

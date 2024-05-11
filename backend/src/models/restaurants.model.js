@@ -26,4 +26,4 @@ export const RestaurantSchema = new Schema(
 	}
 );
 
-export const FoodModel = model('restaurant', RestaurantSchema);
+export const RestaurantModel = model('restaurant', RestaurantSchema);
