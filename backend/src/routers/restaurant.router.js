@@ -1,5 +1,4 @@
 import express from 'express';
-import { connectToDb, getDb } from '../config/db.config.js';
 import { ObjectId } from 'mongodb';
 import handler from 'express-async-handler';
 import { RestaurantModel } from '../models/restaurants.model.js';
@@ -13,7 +12,7 @@ router.get(
 		const maxNumberOfRestaurants = 3;
 
 		const restaurants = await RestaurantModel.find({})
-			.sort({ name: 1 })
+			.sort({ totalOrders: 1 })
 			.skip(maxNumberOfRestaurants * current)
 			.limit(maxNumberOfRestaurants);
 

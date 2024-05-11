@@ -5,11 +5,9 @@ import express from 'express';
 import cors from 'cors';
 import foodRouter from './src/routers/food.router.js';
 import userRouter from './src/routers/user.router.js';
+import sampleRouter from './src/routers/game.router.js';
 import restaurantRouter from './src/routers/restaurant.router.js';
-import { connectToDb } from './src/config/db.config.js';
-
-import { dbconnect } from './src/config/database.config.js';
-dbconnect();
+import { connect } from 'mongoose';
 
 const app = express();
 
@@ -23,20 +21,24 @@ app.use(
 	})
 );
 
-app.use('/api/foods', foodRouter);
-app.use('/api/users', userRouter);
-app.use('/api/restaurants', restaurantRouter);
+// app.use('/api/foods', foodRouter);
+// app.use('/api/users', userRouter);
+// app.use('/api/restaurants', restaurantRouter);
+app.use('/api/games', sampleRouter);
 
 app.use('/test', (req, res) => {
 	res.send({ msg: 'Hello Awab the app is working I guess !!' });
 });
 
-// app.use('/', (req, res) => {
-// 	res.send({ msg: 'Hello Awab the app is working !!' });
-// });
+const PORT = process.env.PORT || 5678;
 
-const PORT = 5678 || process.env.PORT;
+try {
+	connect(process.env.MONGO_URI);
+	console.log('Connected to DB Succesfully');
 
-app.listen(PORT, () =>
-	console.log('Listening on port http://localhost:' + PORT)
-);
+	app.listen(PORT, () =>
+		console.log('Listening on port http://localhost:' + PORT)
+	);
+} catch (err) {
+	console.log(err);
+}
