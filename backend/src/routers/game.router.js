@@ -11,10 +11,12 @@ const router = Router();
 router.get(
 	'/',
 	handler(async (req, res) => {
-		const data = await gameModel
-			.find({})
-			.then(res.send(data))
-			.catch((err) => res.status(400).send({ error: err }));
+		try {
+			const data = await gameModel.find();
+			res.status(200).send(data);
+		} catch (error) {
+			res.status(400).send({ error: error });
+		}
 	})
 );
 
