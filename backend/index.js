@@ -12,13 +12,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use(
-	cors({
-		credentials: true,
-		origin: ['*'],
-		methods: ['GET', 'POST', 'DELETE', 'PATCH'],
-	})
-);
+app.use(cors());
 
 app.use('/api/restaurants', restaurantRouter);
 app.use('/api/games', sampleRouter);

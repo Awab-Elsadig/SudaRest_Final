@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import classes from './restaurants.module.css'
-import axios from 'axios'
+import React, { useEffect, useState } from 'react';
+import classes from './restaurants.module.css';
+import axios from 'axios';
 
 export default function Restaurants() {
-	const [isLoading, setIsLoading] = useState(false)
-	const [restaurants, setRestaurants] = useState([])
+	const [isLoading, setIsLoading] = useState(false);
+	const [restaurants, setRestaurants] = useState([]);
 
 	const getRestaurants = async () => {
 		await axios
@@ -12,15 +12,18 @@ export default function Restaurants() {
 			.then((result) => setRestaurants(result.data))
 			.finally(() =>
 				setTimeout(() => {
-					setIsLoading(false)
+					setIsLoading(false);
 				}, 1000)
 			)
-	}
+			.catch((err) => {
+				console.log('The error is ' + err);
+			});
+	};
 
 	useEffect(() => {
-		setIsLoading(true)
-		getRestaurants()
-	}, [])
+		setIsLoading(true);
+		getRestaurants();
+	}, []);
 
 	return (
 		<div className={classes.container}>
@@ -40,5 +43,5 @@ export default function Restaurants() {
 				)}
 			</div>
 		</div>
-	)
+	);
 }
