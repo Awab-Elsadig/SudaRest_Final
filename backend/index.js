@@ -3,8 +3,7 @@ dotenv.config();
 
 import express from 'express';
 import cors from 'cors';
-import foodRouter from './src/routers/food.router.js';
-import userRouter from './src/routers/user.router.js';
+
 import sampleRouter from './src/routers/game.router.js';
 import restaurantRouter from './src/routers/restaurant.router.js';
 import { connect } from 'mongoose';
@@ -21,9 +20,7 @@ app.use(
 	})
 );
 
-// app.use('/api/foods', foodRouter);
-// app.use('/api/users', userRouter);
-// app.use('/api/restaurants', restaurantRouter);
+app.use('/api/restaurants', restaurantRouter);
 app.use('/api/games', sampleRouter);
 
 app.use('/test', (req, res) => {

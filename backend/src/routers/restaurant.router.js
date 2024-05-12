@@ -1,7 +1,7 @@
 import express from 'express';
-import { ObjectId } from 'mongodb';
 import handler from 'express-async-handler';
-import { RestaurantModel } from '../models/restaurants.model.js';
+import { ObjectId } from 'mongodb';
+import { RestaurantModel } from '../models/restaurant.model.js';
 
 const router = express.Router();
 
