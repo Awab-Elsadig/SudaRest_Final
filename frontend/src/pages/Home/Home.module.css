@@ -1,11 +1,14 @@
-.Home {
+.container {
 	direction: rtl;
+	justify-items: center;
 
 	height: 85dvh;
 	padding-inline: var(--bigInlinePadding);
+	padding-block: 5rem;
 
 	@media (max-width: 767px) {
-		padding: var(--smallInlinePadding);
+		padding-inline: var(--smallInlinePadding);
+		/* display: block; */
 	}
 
 	.HomeHeading {

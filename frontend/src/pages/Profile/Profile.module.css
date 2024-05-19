@@ -1,0 +1,37 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 85dvh;
+	padding: 5rem;
+
+	@media (max-width: 767px) {
+		padding: 1rem;
+	}
+
+	form {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 30rem;
+
+		@media (max-width: 767px) {
+			width: auto;
+		}
+	}
+
+	span {
+		direction: rtl;
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+		padding-top: 1rem;
+	}
+
+	.loginOrRegister {
+		color: #1e40ff;
+		cursor: pointer;
+		font-weight: 600;
+	}
+}

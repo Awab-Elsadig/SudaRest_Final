@@ -5,21 +5,18 @@ import express from 'express';
 import cors from 'cors';
 
 import sampleRouter from './src/routers/game.router.js';
+import userRouter from './src/routers/user.router.js';
 import restaurantRouter from './src/routers/restaurant.router.js';
 import { connect } from 'mongoose';
 
 const app = express();
 
 app.use(express.json());
-
 app.use(cors());
 
 app.use('/api/restaurants', restaurantRouter);
+app.use('/api/users', userRouter);
 app.use('/api/games', sampleRouter);
-
-app.use('/test', (req, res) => {
-	res.send({ msg: 'Hello Awab the app is working I guess !!' });
-});
 
 const PORT = process.env.PORT || 5678;
 

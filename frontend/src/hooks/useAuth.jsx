@@ -1,6 +1,6 @@
-import { useState, createContext, useContext } from "react";
-import * as userService from "../services/userService";
-import { toast } from "react-toastify";
+import { useState, createContext, useContext } from 'react';
+import * as userService from '../services/userService';
+import { toast } from 'react-toastify';
 
 const AuthContext = createContext(null);
 
@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
 		try {
 			const user = await userService.login(email, password);
 			setUser(user);
-			toast.success("Login Successful !");
+			toast.success('Login Successful !');
 		} catch (err) {
 			toast.error(err.response.data);
 		}
@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
 	const logout = () => {
 		userService.logout();
 		setUser(null);
-		toast.success("Logout Successful !");
+		toast.success('Logout Successful !');
 	};
 
 	return (

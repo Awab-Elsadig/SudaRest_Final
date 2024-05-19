@@ -1,10 +1,9 @@
 /* eslint-disable react/prop-types */
-import React from "react";
-import classes from "./Input.module.css";
-import InputContainer from "../InputContainer/InputContainer";
+import React from 'react';
+import classes from './Input.module.css';
 
 function Input(
-	{ label, type, defaultValue, onChange, onBlur, name, error },
+	{ label, type, defaultValue, onChange, onBlur, name, error, bgColor, color },
 	ref
 ) {
 	const getErrorMessage = () => {
@@ -12,28 +11,30 @@ function Input(
 		if (error.message) return error.message;
 
 		switch (error.type) {
-			case "required":
-				return "This field is required";
-			case "minLength":
-				return "Field is Too Short";
+			case 'required':
+				return 'This field is required';
+			case 'minLength':
+				return 'Field is Too Short';
 			default:
-				return "*";
+				return '*';
 		}
 	};
 	return (
-		<InputContainer label={label}>
+		<div className={classes.container}>
+			<label className={classes.label}>{label}</label>
 			<input
-				defaultValue={defaultValue}
 				className={classes.input}
 				type={type}
-				placeholder={label}
-				ref={ref}
-				name={name}
+				defaultValue={defaultValue}
 				onChange={onChange}
 				onBlur={onBlur}
+				name={name}
+				ref={ref}
+				placeholder={label}
+				style={{ backgroundColor: bgColor, color: color }}
 			/>
 			{error && <div className={classes.error}>{getErrorMessage()}</div>}
-		</InputContainer>
+		</div>
 	);
 }
 

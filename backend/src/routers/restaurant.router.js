@@ -12,9 +12,9 @@ router.get(
 		const maxNumberOfRestaurants = 3;
 
 		const restaurants = await RestaurantModel.find({})
-			.sort({ totalOrders: 1 })
-			.skip(maxNumberOfRestaurants * current)
-			.limit(maxNumberOfRestaurants);
+			.sort({ name: 1 })
+			.skip(maxNumberOfRestaurants * current);
+		// .limit(maxNumberOfRestaurants);
 
 		res.status(200).json(restaurants);
 	})
@@ -43,10 +43,24 @@ router.post(
 		try {
 			const savedRestaurant = await restaurant.save();
 			res.status(201).json(savedRestaurant);
+		} catch (error) {
+			res
+				.status(500)
+				.json({ error: 'Could not add restaurant', message: error.message });
+		}
+	})
+);
+
+router.post(
+	'/bulk',
+	handler(async (req, res) => {
+		try {
+			const restaurants = await RestaurantModel.insertMany(sample_restaurants);
+			res.status(201).json(restaurants);
 		} catch (err) {
 			res
 				.status(500)
-				.json({ error: 'Could not add restaurant', message: err.message });
+				.json({ error: 'Could not add restaurants', message: err.message });
 		}
 	})
 );

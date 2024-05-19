@@ -1,6 +1,6 @@
 {
-    "compilerOptions": {
-       "moduleResolution": "node"
-    },
-    "include": ["src", "index.js"]
- }
+	"compilerOptions": {
+		"moduleResolution": "node"
+	},
+	"include": ["src", "index.js"]
+}

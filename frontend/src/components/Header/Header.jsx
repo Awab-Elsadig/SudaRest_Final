@@ -1,22 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import classes from './Header.module.css';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-
 import AnimateHeight from 'react-animate-height';
+import classes from './Header.module.css';
 
 export default function Header() {
-	const [navHeight, setNavHeight] = useState('auto');
+	const [navHeight, setNavHeight] = useState(0);
 	const { logout } = useAuth();
+	const location = useLocation();
 
 	const toggleMenu = () => {
-		setNavHeight((prev) => {
-			const newHeight = prev == 'auto' ? 0 : 'auto';
-			return newHeight;
-		});
+		setNavHeight((prev) => (prev === 'auto' ? 0 : 'auto'));
+	};
+
+	const handleNavLinkClick = (path, event) => {
+		if (location.pathname === path) {
+			event.preventDefault();
+		}
+		setTimeout(() => {
+			setNavHeight(0);
+		}, 200);
 	};
 
 	return (
@@ -25,36 +28,88 @@ export default function Header() {
 				SudaRest
 			</Link>
 
+			<div className={classes.nav}>
+				<ul>
+					<NavLink to={'/'} onClick={(event) => handleNavLinkClick('/', event)}>
+						<li>Home</li>
+					</NavLink>
+					<NavLink
+						to={'/restaurants'}
+						onClick={(event) => handleNavLinkClick('/restaurants', event)}
+					>
+						<li>Restaurants</li>
+					</NavLink>
+					<NavLink
+						to={'/cart'}
+						onClick={(event) => handleNavLinkClick('/cart', event)}
+					>
+						<li>Cart</li>
+					</NavLink>
+					<NavLink
+						to={'/profile'}
+						onClick={(event) => handleNavLinkClick('/profile', event)}
+					>
+						<li className={classes.login}>Profile</li>
+					</NavLink>
+					<NavLink
+						to={'/test'}
+						onClick={(event) => handleNavLinkClick('/test', event)}
+					>
+						<li>Test</li>
+					</NavLink>
+				</ul>
+			</div>
+
 			<div className={classes['burger-menu']} onClick={toggleMenu}>
-				<FontAwesomeIcon icon={faBars} className={classes.burger} />
+				<svg
+					xmlns='http://www.w3.org/2000/svg'
+					fill='none'
+					viewBox='0 0 24 24'
+					strokeWidth={1.5}
+					stroke='currentColor'
+					className={`${classes.burger} w-6 h-6`}
+				>
+					<path
+						strokeLinecap='round'
+						strokeLinejoin='round'
+						d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
+					/>
+				</svg>
 			</div>
 			<AnimateHeight
-				className={`${classes.nav}`}
+				className={`${classes.menuNav}`}
 				height={navHeight}
 				duration={500}
 				animateOpacity
 			>
-				<ul onClick={() => setNavHeight(0)}>
-					<li>
-						<NavLink to={'/'}>Home</NavLink>
-					</li>
-					<li>
-						<NavLink to={'/restaurants'}>Restaurants</NavLink>
-					</li>
-					<li>
-						<NavLink to={'/cart'}>Cart</NavLink>
-					</li>
-					{!localStorage.getItem('user') ? (
-						<li>
-							<NavLink className={classes.login} to={'/login'}>
-								Login
-							</NavLink>
-						</li>
-					) : (
-						<li className={classes.logout} onClick={logout}>
-							Logout
-						</li>
-					)}
+				<ul>
+					<NavLink to={'/'} onClick={(event) => handleNavLinkClick('/', event)}>
+						<li>Home</li>
+					</NavLink>
+					<NavLink
+						to={'/restaurants'}
+						onClick={(event) => handleNavLinkClick('/restaurants', event)}
+					>
+						<li>Restaurants</li>
+					</NavLink>
+					<NavLink
+						to={'/cart'}
+						onClick={(event) => handleNavLinkClick('/cart', event)}
+					>
+						<li>Cart</li>
+					</NavLink>
+					<NavLink
+						to={'/profile'}
+						onClick={(event) => handleNavLinkClick('/profile', event)}
+					>
+						<li className={classes.register}>Profile</li>
+					</NavLink>
+					<NavLink
+						to={'/test'}
+						onClick={(event) => handleNavLinkClick('/test', event)}
+					>
+						<li>Test</li>
+					</NavLink>
 				</ul>
 			</AnimateHeight>
 		</header>

@@ -2,13 +2,28 @@ import React, { useEffect, useState } from 'react';
 import HomeSection from '../../components/HomeSection/HomeSection';
 import classes from './Home.module.css';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+const containerVariants = {
+	initial: {
+		x: '-100dvw',
+	},
+	final: {
+		x: 0,
+		transition: { type: 'tween' },
+	},
+	exit: {
+		x: '100dvw',
+		transition: { type: 'tween' },
+	},
+};
 
 export default function Home() {
 	const [activeSection, setActiveSection] = useState();
 	const navigate = useNavigate();
 
 	const handleClick = async (section) => {
-		navigate('/restaurants');
+		navigate(`/${section}`);
 
 		console.log(`Clicked: ${section}`);
 		setActiveSection(section);
@@ -19,7 +34,13 @@ export default function Home() {
 	}, [activeSection]);
 
 	return (
-		<div className={classes.Home}>
+		<motion.div
+			className={classes.container}
+			variants={containerVariants}
+			initial='initial'
+			animate='final'
+			exit='exit'
+		>
 			<h3 className={classes.HomeHeading}>
 				اكتشف قائمتنا اللذيذة واستمتع بتجربة طعام رائعة.
 			</h3>
@@ -38,6 +59,6 @@ export default function Home() {
 				onClick={() => handleClick('products')}
 			/>
 			{activeSection === 'products' && <div>Content for Products Section</div>}
-		</div>
+		</motion.div>
 	);
 }
