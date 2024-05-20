@@ -21,6 +21,16 @@
 		}
 	}
 
+	button {
+		background-color: dodgerblue;
+		color: #fff;
+		height: 3rem;
+		font-size: 1.2rem;
+		font-weight: 600;
+		border: none;
+		border-radius: 0.4rem;
+	}
+
 	span {
 		direction: rtl;
 		display: flex;

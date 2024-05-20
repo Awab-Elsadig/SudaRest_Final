@@ -4,7 +4,6 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 import classes from './Profile.module.css';
 import Input from '../../components/Input/Input';
-import Button from '../../components/Button/Button';
 import { motion } from 'framer-motion';
 
 const containerVariants = {
@@ -85,14 +84,9 @@ export default function Profile() {
 					error={errors.password}
 				/>
 
-				<Button
-					type='submit'
-					text={loginOrRegister == 'login' ? 'Login' : 'Register'}
-					width='100%'
-					margin={'1rem 0 0 0'}
-					backgroundColor='dodgerblue'
-					fontWeight={'600'}
-				/>
+				<button type='submit'>
+					{loginOrRegister == 'login' ? 'Login' : 'Register'}
+				</button>
 				<span className={classes.under}>
 					{loginOrRegister == 'login' ? (
 						<>

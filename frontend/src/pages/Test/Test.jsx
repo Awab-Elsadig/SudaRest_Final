@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
 import classes from './Test.module.css';
 
 // Motion Variants
 const containerVariants = {
 	initial: {
-		// x: '-100dvw',
-		scale: 0,
-		originY: -1,
+		x: '-100dvw',
 	},
-	final: {
-		scale: 1,
-		transition: { type: 'tween', duration: 1 },
+	animate: {
+		x: 0,
+		transition: { type: 'tween' },
 	},
 	exit: {
 		x: '100dvw',
@@ -19,65 +17,49 @@ const containerVariants = {
 	},
 };
 
-const itemVariants = {
-	hidden: {
-		opacity: 0,
-		scale: 0.8,
-	},
-	visible: {
-		opacity: 1,
-		scale: 1,
-	},
-	exit: {
-		opacity: 0,
-		scale: 0,
-	},
-};
-
 export default function Test() {
-	const [count, setCount] = useState(0);
-	const names = ['First', 'Second', 'Third'];
-
-	const handleIncrement = () => {
-		if (count < 3) {
-			setCount(count + 1);
-		}
-	};
-
-	const handleDecrement = () => {
-		if (count > 0) {
-			setCount(count - 1);
-		}
-	};
+	const [selected, setSelected] = useState();
+	const tabs = [
+		{
+			name: 'Carrot',
+			backgroundColor: 'orange',
+		},
+		{
+			name: 'Tomato',
+			backgroundColor: 'red',
+		},
+		{
+			name: 'Cucumber',
+			backgroundColor: 'green',
+		},
+	];
 
 	return (
 		<motion.div
 			className={classes.container}
 			variants={containerVariants}
 			initial='initial'
-			animate='final'
+			animate='animate'
 			exit='exit'
-			layout
 		>
-			<p>{count}</p>
-			<AnimatePresence mode='sync'>
-				{names.slice(0, count).map((name, i) => (
-					<motion.div
-						key={i}
-						className={classes.box}
-						variants={itemVariants}
-						initial='hidden'
-						animate='visible'
-						exit='exit'
-						layout
-						transition={{ duration: 0.3 }}
+			<motion.div className={classes.box} layout>
+				{tabs.map((tab, index) => (
+					<motion.span
+						className={selected == tab.name ? classes.selected : ''}
+						key={index}
+						onClick={() => setSelected(tab.name)}
+						style={{ backgroundColor: tab.backgroundColor }}
 					>
-						{name}
-					</motion.div>
+						{tab.name}
+						{selected == tab.name && (
+							<motion.div
+								className={classes.leftBorder}
+								layoutId='leftBorder'
+							></motion.div>
+						)}
+					</motion.span>
 				))}
-			</AnimatePresence>
-			<button onClick={handleIncrement}>Add 1</button>
-			<button onClick={handleDecrement}>Subtract 1</button>
+			</motion.div>
 		</motion.div>
 	);
 }

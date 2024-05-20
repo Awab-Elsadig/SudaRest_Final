@@ -4,11 +4,9 @@
 
 	height: 85dvh;
 	padding-inline: var(--bigInlinePadding);
-	padding-block: 5rem;
 
 	@media (max-width: 767px) {
 		padding-inline: var(--smallInlinePadding);
-		/* display: block; */
 	}
 
 	.HomeHeading {

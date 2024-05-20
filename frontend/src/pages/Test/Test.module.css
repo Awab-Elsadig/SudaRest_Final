@@ -7,7 +7,19 @@
 	align-items: center;
 	gap: 0.5rem;
 
-	p {
+	.box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+
+		padding: 1rem;
+
+		outline: 1px solid black;
+	}
+
+	span {
 		display: grid;
 		place-items: center;
 
@@ -16,23 +28,18 @@
 
 		font-size: 1.5rem;
 		background-color: #aaa;
+		cursor: pointer;
 	}
 
-	.box {
-		display: grid;
-		place-content: center;
-
-		width: 10rem;
-		height: 3rem;
-
-		font-size: 1.5rem;
-		background-color: #aaa;
+	.selected {
+		position: relative;
 	}
-
-	button {
-		width: 10rem;
-		height: 4rem;
-		font-size: 1.5rem;
-		font-weight: 600;
+	.leftBorder {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: -1px;
+		background-color: rgb(0, 183, 255);
+		width: 5px;
 	}
 }

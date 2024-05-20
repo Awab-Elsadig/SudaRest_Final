@@ -2,6 +2,7 @@ header {
 	position: relative;
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 	align-items: center;
 	height: 10dvh;
 
@@ -12,7 +13,7 @@ header {
 	padding-inline: var(--bigInlinePadding);
 
 	@media (max-width: 767px) {
-		padding: var(--smallInlinePadding);
+		padding-inline: var(--smallInlinePadding);
 	}
 }
 
@@ -66,6 +67,7 @@ header {
 
 .menuNav {
 	display: none;
+	overflow: hidden;
 	@media (max-width: 767px) {
 		display: block;
 		position: absolute;
@@ -75,7 +77,7 @@ header {
 		background-color: #333;
 		z-index: 10;
 
-		> div ul {
+		ul {
 			padding: 1rem;
 			flex-direction: column;
 			gap: 1rem;
@@ -84,7 +86,7 @@ header {
 				position: relative;
 				padding-block: 1.5rem;
 				text-align: center;
-				transition: background-color 0.3s ease-out, font-size 0.3s ease-in-out;
+				transition: background-color 0.3s, font-size 0.3s;
 			}
 
 			:global(a.active li) {

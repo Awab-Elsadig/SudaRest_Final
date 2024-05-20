@@ -23,6 +23,6 @@ body {
 }
 
 :root {
-	--bigInlinePadding: 5rem;
-	--smallInlinePadding: 1.2rem;
+	--bigInlinePadding: 10rem;
+	--smallInlinePadding: 2rem;
 }

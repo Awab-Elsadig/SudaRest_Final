@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
-import AnimateHeight from 'react-animate-height';
+import { motion } from 'framer-motion';
 import classes from './Header.module.css';
 
 export default function Header() {
@@ -19,12 +19,27 @@ export default function Header() {
 		}
 		setTimeout(() => {
 			setNavHeight(0);
-		}, 200);
+		}, 300);
+	};
+
+	const menuVariants = {
+		open: {
+			height: 'auto',
+			transition: { duration: 0.2 },
+		},
+		closed: {
+			height: 0,
+			transition: { duration: 0.2 },
+		},
 	};
 
 	return (
 		<header className={classes.headerContainer}>
-			<Link className={classes.logo} to={'/'}>
+			<Link
+				className={classes.logo}
+				to={'/'}
+				onClick={(event) => handleNavLinkClick('/', event)}
+			>
 				SudaRest
 			</Link>
 
@@ -76,42 +91,42 @@ export default function Header() {
 					/>
 				</svg>
 			</div>
-			<AnimateHeight
-				className={`${classes.menuNav}`}
-				height={navHeight}
-				duration={500}
-				animateOpacity
+			<motion.div
+				className={classes.menuNav}
+				variants={menuVariants}
+				initial='closed'
+				animate={navHeight === 'auto' ? 'open' : 'closed'}
 			>
 				<ul>
 					<NavLink to={'/'} onClick={(event) => handleNavLinkClick('/', event)}>
-						<li>Home</li>
+						<motion.li>Home</motion.li>
 					</NavLink>
 					<NavLink
 						to={'/restaurants'}
 						onClick={(event) => handleNavLinkClick('/restaurants', event)}
 					>
-						<li>Restaurants</li>
+						<motion.li>Restaurants</motion.li>
 					</NavLink>
 					<NavLink
 						to={'/cart'}
 						onClick={(event) => handleNavLinkClick('/cart', event)}
 					>
-						<li>Cart</li>
+						<motion.li>Cart</motion.li>
 					</NavLink>
 					<NavLink
 						to={'/profile'}
 						onClick={(event) => handleNavLinkClick('/profile', event)}
 					>
-						<li className={classes.register}>Profile</li>
+						<motion.li className={classes.register}>Profile</motion.li>
 					</NavLink>
 					<NavLink
 						to={'/test'}
 						onClick={(event) => handleNavLinkClick('/test', event)}
 					>
-						<li>Test</li>
+						<motion.li>Test</motion.li>
 					</NavLink>
 				</ul>
-			</AnimateHeight>
+			</motion.div>
 		</header>
 	);
 }
